@@ -17,8 +17,8 @@ const EventDetail = () => {
         location: "",
         date: "",
         description: "",
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
+        latitude: 0,
+        longitude: 0,
       });
       return;
     }
@@ -36,12 +36,17 @@ const EventDetail = () => {
       ? "http://localhost:3001/api/events"
       : `http://localhost:3001/api/events/${id}`;
 
+    const currentEvent = { ...event };
+    if (isCreateMode) delete currentEvent.id;
+
     fetch(url, {
       method,
       headers: {
+        accept: "application/json",
         "Content-Type": "application/json",
+        Authorization: "Bearer " + localStorage.getItem("token"),
       },
-      body: JSON.stringify(event),
+      body: JSON.stringify(currentEvent),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -52,13 +57,22 @@ const EventDetail = () => {
   };
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:3001/api/events/${id}`, { method: "DELETE" })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("Event deleted: ", data);
+    fetch(`http://localhost:3001/api/events/${id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      },
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`Delete failed: ${res.status}`);
+        }
+        console.log("Event deleted");
+        navigate("/events");
+        window.location.reload();
       })
       .catch((error) => {
-        console.log("Event delete failed: ", error);
+        console.error("Event delete failed: ", error);
       });
   };
 
@@ -106,7 +120,7 @@ const EventDetail = () => {
             Date of Event
             <input
               type="date"
-              value={event.date || ""}
+              value={event.date ? event.date.slice(0, 10) : "" || ""}
               placeholder="Date"
               onChange={(e) => setEvent({ ...event, date: e.target.value })}
             />

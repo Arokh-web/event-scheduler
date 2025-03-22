@@ -27,13 +27,27 @@ const Header = () => {
             <Link to="/">Home</Link>
           </li>
           <li className="header-nav-li">
-            <Link to="events">Upcoming Events</Link>
+            <Link to="events">Events</Link>
+          </li>
+          <li className="header-nav-li">
+            <Link to="events/new">Create Event</Link>
           </li>
           <li className="header-nav-li">
             {isAuthenticated || auth ? (
-              <Link to="/" onClick={handleLogout}>
-                Log out
-              </Link>
+              <>
+                <Link to="profile">Profile</Link>
+              </>
+            ) : (
+              <></>
+            )}
+          </li>
+          <li className="header-nav-li">
+            {isAuthenticated || auth ? (
+              <>
+                <Link to="/" onClick={handleLogout}>
+                  Log out
+                </Link>
+              </>
             ) : (
               <Link to="signpage">Log in or SignUp</Link>
             )}

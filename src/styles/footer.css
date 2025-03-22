@@ -1,10 +1,10 @@
 footer {
-    background: linear-gradient(to right, #ff7a18, #ffb347);
-    color: white;
-    padding: 1rem;
-    text-align: center;
-    margin-top: 3rem;
-    border-radius: 40% 40% 0 0 / 10% 10% 0 0;
-    box-shadow: 0 -10px 20px rgba(255, 122, 24, 0.2);
-    font-weight: bold;
-  }
+  background: linear-gradient(to right, #ff7a18, #ffb347);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(175, 87, 87, 0.842);
+  font-weight: bold;
+}

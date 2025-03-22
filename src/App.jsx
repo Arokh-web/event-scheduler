@@ -7,6 +7,7 @@ import EventDetail from "./pages/EventDetail";
 import SignPage from "./pages/SignPage";
 import NotFound from "./pages/NotFound";
 import SignIn from "./components/SignIn";
+import Profile from "./pages/Profile";
 
 // Import of needed modules
 import { Routes, Route, Navigate } from "react-router-dom";
@@ -75,6 +76,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="signpage" element={<SignPage />} />
             <Route path="signin" element={<SignIn />} />
+            <Route path="profile" element={<Profile />} />
             <Route
               path="events"
               element={
