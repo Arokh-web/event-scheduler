@@ -34,8 +34,8 @@ const SignIn = () => {
 
   return (
     <div className="sign-container">
+      <h2>SignIn</h2>
       <form className="sign-form" onSubmit={handleSignIn}>
-        <h2>SignIn</h2>
         <input
           type="text"
           name="email"

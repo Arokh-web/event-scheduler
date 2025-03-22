@@ -7,3 +7,18 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   /* Font looks professional enough, without serifs */
 }
+
+#home {
+  text-decoration: none;
+  color: #ff5e00;
+}
+
+#home a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#home a:hover {
+  color: #ff78188e;
+  cursor: pointer;
+}

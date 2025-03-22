@@ -26,7 +26,7 @@ const SignPage = () => {
           <h2>
             Already have an Account?
             <br />
-            Then please LogIn!
+            Then please SignIn!
           </h2>
 
           <SignIn />

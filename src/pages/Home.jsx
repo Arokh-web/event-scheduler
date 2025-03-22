@@ -1,11 +1,14 @@
 import React from "react";
-import Events from "./Events";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
     <div>
-      Welcome to the Event Scheduler!
-      {/* <Events /> */}
+      <h1>Welcome to the Event Scheduler!</h1>
+      <h2 id="home">
+        Please <Link to="signin">sign in</Link> to view a full list of available
+        events.
+      </h2>
     </div>
   );
 };

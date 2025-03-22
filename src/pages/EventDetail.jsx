@@ -83,32 +83,80 @@ const EventDetail = () => {
       {isEditMode ? (
         <div className="event-detail-content">
           <h1>Edit Event</h1>
-          <input
-            type="text"
-            value={event.title || ""}
-            placeholder="Title"
-            onChange={(e) => setEvent({ ...event, title: e.target.value })}
-          />
-          <input
-            type="text"
-            value={event.location || ""}
-            placeholder="Location"
-            onChange={(e) => setEvent({ ...event, location: e.target.value })}
-          />
-          <input
-            type="text"
-            value={event.date || ""}
-            placeholder="Date"
-            onChange={(e) => setEvent({ ...event, date: e.target.value })}
-          />
-          <input
-            type="text"
-            value={event.description || ""}
-            placeholder="Description"
-            onChange={(e) =>
-              setEvent({ ...event, description: e.target.value })
-            }
-          />
+          <h3>Main Data</h3>
+          <label>
+            Event Title
+            <input
+              type="text"
+              value={event.title || ""}
+              placeholder="Title"
+              onChange={(e) => setEvent({ ...event, title: e.target.value })}
+            />
+          </label>
+          <label htmlFor="">
+            Location
+            <input
+              type="text"
+              value={event.location || ""}
+              placeholder="Location"
+              onChange={(e) => setEvent({ ...event, location: e.target.value })}
+            />
+          </label>
+          <label>
+            Date of Event
+            <input
+              type="date"
+              value={event.date || ""}
+              placeholder="Date"
+              onChange={(e) => setEvent({ ...event, date: e.target.value })}
+            />
+          </label>
+          <label>
+            Description<br></br>
+            <textarea
+              value={event.description || ""}
+              placeholder="Description"
+              onChange={(e) =>
+                setEvent({ ...event, description: e.target.value })
+              }
+            />
+          </label>
+          <h3>Coordinates</h3>
+          <label>
+            Latitude:
+            <input
+              type="number"
+              value={event.latitude || ""}
+              placeholder="Latitude"
+              step="any"
+              onChange={(e) =>
+                setEvent({ ...event, latitude: parseFloat(e.target.value) })
+              }
+            />
+          </label>
+          <label>
+            Longitude:
+            <input
+              type="number"
+              value={event.longitude || ""}
+              placeholder="Longitude"
+              step="any"
+              onChange={(e) =>
+                setEvent({ ...event, longitude: parseFloat(e.target.value) })
+              }
+            />
+          </label>
+          <h3>IDs of Reference</h3>
+          <label>
+            <input
+              type="number"
+              value={event.organizerId || ""}
+              placeholder="Organizer ID"
+              onChange={(e) =>
+                setEvent({ ...event, organizerId: parseInt(e.target.value) })
+              }
+            />
+          </label>
           <button className="button-style" onClick={handleSave}>
             Save
           </button>
