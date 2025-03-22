@@ -1,0 +1,52 @@
+/* Header-only CSS-Styles: every part is in an own container! */
+
+.header-container {
+  display: flex;
+  height: 150px;
+  gap: 5rem;
+  border-radius: 50%;
+  box-shadow: #ff562269 8px 14px 20px 12px;
+  background: linear-gradient(135deg, #ff9800, #ff5722, #ffcc80);
+  align-items: center;
+}
+
+.header-logo-container {
+  display: flex;
+  margin: 5%;
+
+  align-items: center;
+}
+
+.img-logo {
+  border: solid 3px orangered;
+  border-radius: 30%;
+  width: 40%;
+  height: 40%;
+  border-radius: 30%;
+}
+
+.header-title-container {
+  display: flex;
+}
+
+.header-title {
+  font-size: 2rem;
+  color: white;
+  /* Placeholder} */
+}
+
+.header-nav {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 0.3rem;
+}
+
+.header-nav-li a {
+  text-decoration: none;
+  color: inherit;
+}
+.header-nav-li:hover {
+  color: whitesmoke;
+  cursor: pointer;
+}
