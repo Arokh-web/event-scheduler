@@ -100,6 +100,14 @@ function App() {
                 </ProtectedLayout>
               }
             />
+            <Route
+              path="edit/new"
+              element={
+                <ProtectedLayout>
+                  <EventDetail />
+                </ProtectedLayout>
+              }
+            />
 
             {/* FALLBACK */}
             <Route path="*" element={<NotFound />} />

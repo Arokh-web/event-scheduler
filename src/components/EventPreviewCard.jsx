@@ -72,9 +72,7 @@ const EventPreviewCard = ({ event }) => {
             </button>
             <button
               className="button-style"
-              onClick={() =>
-                navigate(`/edit/${event.id}`, { state: { isEditMode: true } })
-              }
+              onClick={() => navigate(`/events/${event.id}`)}
             >
               Edit
             </button>

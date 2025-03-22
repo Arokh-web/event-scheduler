@@ -1,0 +1,23 @@
+.detail-page-container {
+  margin-top: 2rem;
+}
+
+.event-detail-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.event-detail-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 50%;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.event-detail-content button {
+  max-width: 25%;
+}
